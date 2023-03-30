@@ -27,7 +27,7 @@ public class Nom {
         boolean nom = compruebaNombre(nombre);
         System.out.println("Escriu la teva contrassenya:");
         String contra = teclat.nextLine();
-        boolean contrassenya = compruebaNombre(contra);
+        boolean contras = Contrassenya.compruebaContrasenya(contra);
         if (nom) {
             System.out.println("El nom ingressat és vàlid");
         } else {
@@ -39,10 +39,10 @@ public class Nom {
         } else {
             System.out.println("El mail ingressat no és vàlid");
         }
-        if (contrassenya) {
-            System.out.println("La contrassenya ingresada és vàlida");
-        } else {
+        if (!contras) {
             System.out.println("La contrassenya ingresada no és vàlida");
+        } else {
+            System.out.println("La contrassenya ingresada és vàlida");
         }
     }
 }
