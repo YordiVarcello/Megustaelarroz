@@ -3,6 +3,8 @@ package Practica;
 import java.util.Scanner;
 
 public class Main {
+    protected static final String CODIGO_GENERADO = ValidadorCodigo.GeneradorCodigo.generarCodigo(); // Acceso al código generado
+
     public static void main(String[] args) {
         String valid = " vàlid";
         String valida = " vàlida";
@@ -39,6 +41,18 @@ public class Main {
                 System.out.println("La contrassenya ingresada no és vàlida");
             } else {
                 System.out.println("La contrassenya ingresada és vàlida");
+            }
+        } while (!contras);
+        do {
+            String codi = CODIGO_GENERADO;
+            System.out.println(codi);
+            System.out.println("Repeteix el codi");
+            String code = teclat.nextLine();
+            contras = ValidadorCodigo.validarCodigo(code);
+            if (!contras) {
+                System.out.println("El codi ingressat no és vàlid");
+            } else {
+                System.out.println("El codi ingressat és vàlid");
             }
         } while (!contras);
     }

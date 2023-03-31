@@ -1,7 +1,7 @@
 package Practica;
 
 public class Contrassenya {
-    static boolean compruebaContrasenya(String contra) {
+     static boolean compruebaContrasenya(String contra) {
         boolean validar;
         String especial = "@-_#";
         if (contra.length() != 8) {
